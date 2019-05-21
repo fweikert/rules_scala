@@ -1,0 +1,34 @@
+---
+platforms:
+  ubuntu1604:
+    shell_commands:
+    # Disable local disk caching on CI.
+    - mv tools/bazel.rc.buildkite tools/bazel.rc
+    - echo "import %workspace%/tools/bazel.rc" > .bazelrc
+    build_targets:
+    - "//test/..."
+    test_targets:
+    - "//test/..."
+  ubuntu1804:
+    shell_commands:
+    # Disable local disk caching on CI.
+    - mv tools/bazel.rc.buildkite tools/bazel.rc
+    - echo "import %workspace%/tools/bazel.rc" > .bazelrc
+    build_targets:
+    - "//test/..."
+    test_targets:
+    - "//test/..."
+  macos:
+    shell_commands:
+    # Disable local disk caching on CI.
+    - mv tools/bazel.rc.buildkite tools/bazel.rc
+    - echo "import %workspace%/tools/bazel.rc" > .bazelrc
+    build_targets:
+    - "//test/..."
+    test_targets:
+    - "//test/..."
+  rbe_ubuntu1604:
+    build_targets:
+    - "//test/..."
+    test_targets:
+    - "//test/..."
